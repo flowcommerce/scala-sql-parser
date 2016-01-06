@@ -792,5 +792,11 @@ class SQLParserSpec extends Specification {
       val r = parser.parse(Queries.q22)
       r should beSome
     }
+
+    "parse bad query" in {
+      val parser = new SQLParser
+      val r = parser.parse("Select * blah where why;")
+      r should beNone
+    }
   }
 }
