@@ -8,8 +8,8 @@ class ResolverSpec extends Specification {
 
   private def doTest(q: String) = {
     val parser = new SQLParser
-    val r = parser.parse(q)
-    resolver.resolve(r.get, TestSchema.definition)
+    val result = parser.parse(q)
+    resolver.resolve(result.right.get, TestSchema.definition)
   }
 
   "Resolver" should {

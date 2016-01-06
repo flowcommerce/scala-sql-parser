@@ -216,10 +216,10 @@ class SQLParser extends StandardTokenParsers {
 
   private def stripQuotes(s:String) = s.substring(1, s.length-1)
 
-  def parse(sql:String): Option[SelectStmt] = {
+  def parse(sql:String): Either[String, SelectStmt] = {
     phrase(select)(new lexical.Scanner(sql)) match {
-      case Success(r, q) => Option(r)
-      case x => println(x); None
+      case Success(r, q) => Right(r)
+      case err => Left(err.toString)
     }
   }
 }

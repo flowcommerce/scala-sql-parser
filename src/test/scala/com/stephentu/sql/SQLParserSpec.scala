@@ -669,134 +669,156 @@ class SQLParserSpec extends Specification {
   "SQLParser" should {
     "parse query1" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q1)
-      r should beSome
+      val result = parser.parse(Queries.q1)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query2" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q2)
-      r should beSome
+      val result = parser.parse(Queries.q2)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query3" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q3)
-      r should beSome
+      val result = parser.parse(Queries.q3)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query4" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q4)
-      r should beSome
+      val result = parser.parse(Queries.q4)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query5" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q5)
-      r should beSome
+      val result = parser.parse(Queries.q5)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query6" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q6)
-      r should beSome
+      val result = parser.parse(Queries.q6)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query7" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q7)
-      r should beSome
+      val result = parser.parse(Queries.q7)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query8" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q8)
-      r should beSome
+      val result = parser.parse(Queries.q8)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query9" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q9)
-      r should beSome
+      val result = parser.parse(Queries.q9)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query10" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q10)
-      r should beSome
+      val result = parser.parse(Queries.q10)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query11" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q11)
-      r should beSome
+      val result = parser.parse(Queries.q11)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query12" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q12)
-      r should beSome
+      val result = parser.parse(Queries.q12)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query13" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q13)
-      r should beSome
+      val result = parser.parse(Queries.q13)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query14" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q14)
-      r should beSome
+      val result = parser.parse(Queries.q14)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query16" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q16)
-      r should beSome
+      val result = parser.parse(Queries.q16)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query17" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q17)
-      r should beSome
+      val result = parser.parse(Queries.q17)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query18" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q18)
-      r should beSome
+      val result = parser.parse(Queries.q18)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query19" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q19)
-      r should beSome
+      val result = parser.parse(Queries.q19)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query20" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q20)
-      r should beSome
+      val result = parser.parse(Queries.q20)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query21" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q21)
-      r should beSome
+      val result = parser.parse(Queries.q21)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse query22" in {
       val parser = new SQLParser
-      val r = parser.parse(Queries.q22)
-      r should beSome
+      val result = parser.parse(Queries.q22)
+      result.right.toOption should beSome
+      result.left.toOption should beNone
     }
 
     "parse bad query" in {
       val parser = new SQLParser
-      val r = parser.parse("Select * blah where why;")
-      r should beNone
+      val result = parser.parse("select * blah where why;")
+      result.right.toOption should beNone
+      result.left.toOption should beSome
     }
   }
 }
