@@ -200,11 +200,13 @@ case class Min(expr: SqlExpr, ctx: Context = null) extends SqlAgg {
   def gatherFields = expr.gatherFields.map(_.copy(_2 = true))
   def sql = "min(" + expr.sql + ")"
 }
+/*
 case class Max(expr: SqlExpr, ctx: Context = null) extends SqlAgg {
   def copyWithContext(c: Context) = copy(ctx = c)
   def gatherFields = expr.gatherFields.map(_.copy(_2 = true))
   def sql = "max(" + expr.sql + ")"
 }
+*/
 case class GroupConcat(expr: SqlExpr, sep: String, ctx: Context = null) extends SqlAgg {
   def copyWithContext(c: Context) = copy(ctx = c)
   def gatherFields = expr.gatherFields.map(_.copy(_2 = true))

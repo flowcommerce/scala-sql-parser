@@ -154,7 +154,6 @@ class SQLParser extends StandardTokenParsers {
   def known_function: Parser[SqlExpr] =
     "count" ~> "(" ~> ( "*" ^^ (_ => CountStar()) | opt("distinct") ~ expr ^^ { case d ~ e => CountExpr(e, d.isDefined) }) <~ ")" |
     "min" ~> "(" ~> expr <~ ")" ^^ (Min(_)) |
-    "max" ~> "(" ~> expr <~ ")" ^^ (Max(_)) |
     "sum" ~> "(" ~> (opt("distinct") ~ expr) <~ ")" ^^ { case d ~ e => Sum(e, d.isDefined) } |
     "avg" ~> "(" ~> (opt("distinct") ~ expr) <~ ")" ^^ { case d ~ e => Avg(e, d.isDefined) } |
     "extract" ~> "(" ~ ("year" | "month" | "day") ~ "from" ~ expr ~ ")" ^^ {

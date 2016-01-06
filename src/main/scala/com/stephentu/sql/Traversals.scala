@@ -50,7 +50,6 @@ trait Traversals {
       case Sum(e, _, _) => recur(e)
       case Avg(e, _, _) => recur(e)
       case Min(e, _) => recur(e)
-      case Max(e, _) => recur(e)
       case GroupConcat(e, _, _) => recur(e)
       case FunctionCall(_, a, _) => a.map(recur)
       case Extract(e, _, _) => recur(e)
